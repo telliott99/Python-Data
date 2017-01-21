@@ -1,0 +1,18 @@
+stuff from 
+http://telliott99.blogspot.com/search/label/ssh
+
+
+
+https://docs.python.org/3/library/binascii.html
+
+
+
+Struct.md
+https://pymotw.com/2/struct/
+
+
+
+binascii.hexlify(b'hello')
+base64.b16encode
+
+http://epydoc.sourceforge.net/stdlib/binascii-module.html
