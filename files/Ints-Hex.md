@@ -83,9 +83,7 @@ Probably, though, you wanted a list of ints.  I think the best way is
 >>>
 ```
 
-Here is yet another way:  use the function **chunks**
-
-(from **utils.py** [here](Utils.md)).
+Here is yet another way:  use the function **chunks** from [Utils.py](Utilities.md).
 
 I'm sure you can guess what it does.  Then
 
