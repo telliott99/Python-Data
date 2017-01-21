@@ -6,23 +6,17 @@ To the extent we can, we will stick with that.
 
 ### Python reads binary data
 
-However, Python 2 actually writes data to and reads it from disk as "binary data".
+I'm still running Python 2.7, so this write-up is specific for old style Python, which is much different than Python 3.X.
 
-So what is that:
+Python 2 writes data to and reads it from disk as strings composed of "binary data".  So what is:
 
 * [binary data](files/BinaryData.md)
 
-* [bytearray](files/ByteArray.md)
-
-### Utilities
-
-First, to read and write data from disk we use some 
-
-* [Utility functions](files/Utilities.md)
-
-These functions read binary data from and write it to disk.
+* a [bytearray](files/ByteArray.md)
 
 ### Read and write Binary Data
+
+These functions read binary data from and write it to disk.
 
 * I/O with [binary data](files/Binary-IO.md)
 

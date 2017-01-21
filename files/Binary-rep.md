@@ -15,7 +15,7 @@ Not to be confused with binary data.
 >>>
 ```
 
-Note the same issue with padding that we had with hex.
+Note the same issue with padding that we saw with **hex**.
 
 #### fancy formatting
 
@@ -38,6 +38,4 @@ Two other ways use fancy formatting
 '0b01000001'
 >>> 
 ```
-
-todo:
-'{:b}'.format(257)
+Basically, we are telling Python how many places we want.

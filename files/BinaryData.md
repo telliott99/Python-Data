@@ -1,8 +1,10 @@
 ### Binary Data
 
-In Python, binary data can be stored in a string with a special format, for example: ``\xff``.  These are called [string literals](https://docs.python.org/2.7/reference/lexical_analysis.html#string-literals).
+In Python 2.X, binary data can be stored in a string with a special format, for example: ``'\xff'``.
 
-The backslash "escapes" the ``x`` and signifies that the two characters following are hex.
+These are called [string literals](https://docs.python.org/2.7/reference/lexical_analysis.html#string-literals).
+
+The backslash "escapes" the ``x`` and signifies that the two characters following are hex.  Another example is of course the Unix newline ``'\n'`` or tab ``'\t'``.
 
 ```python
 >>> s = '\xff'
@@ -13,9 +15,7 @@ The backslash "escapes" the ``x`` and signifies that the two characters followin
 >>>
 ```
 
-Another example would be the Unix newline ``'\n'``.
-
-There must be at least two valid hex characters (``0..9a..f``) following ``'\x'``:
+There must be at least two valid hex characters ``[0..9][a..f]`` following ``'\x'``:
 
 ```python
 >>> '\xf'
@@ -35,7 +35,7 @@ A string can mix ``\x`` characters with regular characters.
 >>>
 ```
 
-In fact, the ASCII characters "a" and "e" can be thought of as data, and they can be converted to ints along with ``\xff``:
+In fact, the ASCII characters "a" and "e" can be thought of as data (equivalent to 97 and 101), and they, along with ``\xff``,  can be converted to ints:
 
 ```
 python >>> s = '\xffae'
@@ -47,7 +47,7 @@ python >>> s = '\xffae'
 >>>
 ```
 
-Such characters can be concatenated, etc.
+Such string literals can be concatenated, sliced or repeated justlike any other string.
 
 ```python
 >>> s = '\x00\xff'
@@ -60,6 +60,7 @@ Such characters can be concatenated, etc.
 '\xff\xff\xff'
 >>>
 ```
+Here is anothe example of binary data in Python:  a digest of the string ``'hello'``
 
 ```python
 >>> import hashlib
@@ -75,7 +76,7 @@ Such characters can be concatenated, etc.
 >>>
 ```
 
-If a printable character is available, Python will use it.  Otherwise it prints ``\x`` plus the hex representation.  
+In displaying binary data, if a printable character is available, Python will use it.  Otherwise it prints ``\x`` plus the hex representation.  
 
 In the above string, there are eight printable characters, each of one byte ``(]A@*K*vq)``, plus another eight explicit bytes.
 

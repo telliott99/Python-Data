@@ -12,3 +12,12 @@ def writeData(fn, data, mode = 'w'):
     FH.write(data)
     FH.close()
 ```
+
+```python
+def chunks(s, n=2):
+    rL = list()
+    while s:
+        rL.append(s[:2])
+        s = s[2:]
+    return rL
+```

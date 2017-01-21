@@ -1,10 +1,18 @@
 ### Binary data to ints
 
-Reading from binary data, use **ord**
+Going from binary data to ints, new style:  use a **bytearray**
 
 ```python
->>> s = '\x00\xff'
->>> [ord(c) for c in s]
+>>> ba = bytearray('\x00\xff')
+>>> list(ba)
+[0, 255]
+>>>
+```
+
+Or, simply use **ord**
+
+```python
+>>> [ord(c) for c in '\x00\xff']
 [0, 255]
 >>>
 ```
@@ -12,8 +20,7 @@ Reading from binary data, use **ord**
 Perhaps more elegantly, use **map** and **ord**:
 
 ```python
->>> s = '\x00\xff'
->>> map(ord, s)
+>>> map(ord, '\x00\xff')
 [0, 255]
 >>>
 
@@ -21,7 +28,16 @@ Perhaps more elegantly, use **map** and **ord**:
 
 ### Ints to binary data
 
-Use **bytearray**.  ([More](ByteArray.md) about bytearray).
+Old style:  use **chr**.
+
+```
+>>> ''.join([chr(c) for c in [0,255]])
+'\x00\xff'
+>>>
+```
+
+
+Or use **bytearray**.  ([More](ByteArray.md) about bytearray).
 
 ```python
 >>> import utils as ut
@@ -34,6 +50,16 @@ bytearray(b'\x00\xff')
 >>>
 ```
 
-Or you could use [struct](files/Struct.md)
+You could use [struct](Struct.md)
+
+```But that's pretty excessives
+>>> import struct
+>>> data = [0, 255]
+>>> struct.pack('B B', *data)
+'\x00\xff'
+>>>
+```
+
+But that really does seem excessive.
 
 [docs](https://docs.python.org/2/library/struct.html#format-characters) on struct.

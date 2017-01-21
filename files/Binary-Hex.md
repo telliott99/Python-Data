@@ -2,13 +2,9 @@
 
 ### Int - > Hex
 
-```python
->>> hex(255)
-'0xff'
->>> hex(65537)
-'0x10001'
->>>
-```
+Use **hexlify** from **binascii**
+
+(See [here](Binascii.md) about binascii).
 
 ### [Int] -> Binary Data - > Hex
 
@@ -21,6 +17,16 @@
 >>>
 ```
 
+
+```python
+>>> hex(255)
+'0xff'
+>>> hex(65537)
+'0x10001'
+>>>
+```
+
+Note the lack of padding.  
 
 ### Hex - > Binary Data - > [Int]
 

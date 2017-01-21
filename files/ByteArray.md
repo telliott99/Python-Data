@@ -1,6 +1,6 @@
 ### Bytearray
 
-The function **bytearray** is a built-in and **bytearray** is a type.
+The function **bytearray** is a built-in and **bytearray** is a type.  A bytearray has a representation that looks like binary data, but it is really [int].
 
 [docs](https://docs.python.org/3.1/library/functions.html#bytearray)
 
@@ -17,7 +17,11 @@ bytearray(b'\x00\xff')`
 >>>
 ```
 
-At this point, it might seem as if bytearray is a special kind of string.  It is not.  It is a list of integers 0..255 with a special representation.
+At this point, it might seem as if bytearray is a special kind of string.  It is not.  It is a 
+
+> The bytearray class is a mutable sequence of integers in the range 0 <= x < 256
+
+with a special representation.
 
 ```python
 >>> list(ba)
@@ -33,7 +37,7 @@ At this point, it might seem as if bytearray is a special kind of string.  It is
 
 Here we make a new bytearray by passing a single integer (for the size of a zeroed array).  
 
-We also can use a string.  Then, the encoding must be specified:
+We also can use a string.  For a string, the encoding must then be specified:
 
 ```python
 >>> bytearray(6)
@@ -43,7 +47,7 @@ bytearray(b'00ff')
 >>> 
 ```
 
-Binary 
+Binary digits can give *surprising* results with **bytearray**
 
 ```python
 >>> b = bin(255)
@@ -55,4 +59,28 @@ Binary
 >>> ba
 bytearray(b'0b11111111')
 >>> 
+>>>
+>>> for c in ba:  print c
+... 
+48
+98
+49
+49
+49
+49
+49
+49
+49
+49
+>>>
 ```
+
+What?  How did ``b'11111111`` turn into
+
+```
+[48, 98, 49, 49, 49, 49, 49, 49, 49, 49]
+```
+I simply note that the docs do not list binary numbers as acceptable input.  
+
+> If it is an iterable, it must be an iterable of integers in the range 0 <= x < 256, which are used as the initial contents of the array
+

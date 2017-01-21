@@ -12,7 +12,15 @@ The best way to do this is to use a format string:
 >>>
 ```
 
-**hex** will also do it.
+and note:
+
+```python
+>>> '{:b}'.format(257)
+'100000001'
+>>>
+```
+
+The built-in **hex** will also do it.
 
 ```python
 >>> hex(65)
@@ -31,7 +39,7 @@ But you see the problems (added prefix and truncation).  We can deal with this m
 >>>
 ```
 
-or, better
+or, better, ``zfill``
 
 ```python
 >>> b = bin(65)
@@ -61,7 +69,7 @@ We can use the venerable **int** function on a single hex byte or multiple bytes
 15
 >>> int('49276d', 16)
 4794221
->>> int('\x04', 16)     # error
+>>> int('\x04', 16)     # ValueError
 ```
 
 Probably, though, you wanted a list of ints.  I think the best way is
@@ -75,20 +83,11 @@ Probably, though, you wanted a list of ints.  I think the best way is
 >>>
 ```
 
-Here is yet another way:
+Here is yet another way:  use the function **chunks**
 
-add to **utils.py**
+(from **utils.py** [here](Utils.md)).
 
-```python
-def chunks(s, n=2):
-    rL = list()
-    while s:
-        rL.append(s[:2])
-        s = s[2:]
-    return rL
-```
-
-Then
+I'm sure you can guess what it does.  Then
 
 ```
 >>> import utils as ut
