@@ -41,7 +41,13 @@ In fact, the ASCII characters "a" and "e" can be thought of as data (equivalent 
 python >>> s = '\xffae'
 >>> [ord(c) for c in s]
 [255, 97, 101]
->>> s = '\xff\xae'
+>>>
+```
+
+Look closely:
+
+```
+>>>  s = '\xff\xae'
 >>> [ord(c) for c in s]
 [255, 174]
 >>>
@@ -82,20 +88,9 @@ In the above string, there are eight printable characters, each of one byte ``(]
 
 #### PKCSF#7
 
-I had a problem doing padding because ``'\x0' + '4'`` is not allowed:
-
-```python'
->>> n = 4
->>> '\x0' + str(n)
-ValueError: invalid \x escape
->>> '\x0%d' % n
-ValueError: invalid \x escape
->>>
-```
-
 For PKCSF#7 padding the pad character depends on the length.
 
-I finally solved this with a lookup dictionary
+I solved this with a lookup dictionary
 
 ```python
 D = {0:  '\x00', 1:  '\x01', 2:  '\x02', 3:  '\x03', 

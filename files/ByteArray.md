@@ -6,7 +6,7 @@ The function **bytearray** is a built-in and **bytearray** is a type.  A bytearr
 
 The init function can take a string, an int or an iterable.  
 
-Here we feed it a list of ints in 0..255.
+Here we feed it a list of ints:  0..255.
 
 ```python
 >>> ba = bytearray([0,255])

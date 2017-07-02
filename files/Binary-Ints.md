@@ -44,7 +44,7 @@ Or use **bytearray**.  ([More](ByteArray.md) about bytearray).
 >>> b = bytearray([0,255])
 >>> b
 bytearray(b'\x00\xff')
->>> ut.write('out.bin',b)
+>>> ut.write('out.bin', mode = 'b')
 >>> ut.read('out.bin', mode='rb')
 '\x00\xff'
 >>>

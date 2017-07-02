@@ -35,4 +35,3 @@ These functions read binary data from and write it to disk.
 * [Struct](files/Struct.md)
 
 * [binascii](files/BinAscii.md)
-
