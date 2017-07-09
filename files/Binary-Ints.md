@@ -50,9 +50,9 @@ bytearray(b'\x00\xff')
 >>>
 ```
 
-You could use [struct](Struct.md)
+You could use [struct](Struct.md).
 
-```But that's pretty excessives
+```
 >>> import struct
 >>> data = [0, 255]
 >>> struct.pack('B B', *data)

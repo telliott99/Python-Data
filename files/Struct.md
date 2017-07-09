@@ -32,11 +32,16 @@ The docs [say](https://docs.python.org/2/library/struct.html#byte-order-size-and
 If we want something different, we can specify the byte order with ``>`` or ``<``.  The ``>`` means "big-endian" (high-value byte first).
 
 ```python
+>>> struct.pack('I', 255)
+'\xff\x00\x00\x00'
+>>> struct.pack('<I', 255)
+'\xff\x00\x00\x00'
+>>> struct.pack('>I', 255)
 '\x00\x00\x00\xff'
->>>
+>>> 
 ```
 
-By comparing the two, we conclude that the default on macOS is little-endian, least-significant byte first.
+By comparison, we conclude that the default on macOS is little-endian, least-significant byte first.
 
 macOS [docs](https://developer.apple.com/library/content/documentation/CoreFoundation/Conceptual/CFMemoryMgmt/Concepts/ByteOrdering.html)
 

@@ -32,6 +32,6 @@ These functions read binary data from and write it to disk.
 
 ### Useful modules
 
-* [Struct](files/Struct.md)
+* [struct](files/Struct.md)
 
 * [binascii](files/BinAscii.md)
